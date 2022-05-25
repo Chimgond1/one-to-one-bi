@@ -17,11 +17,11 @@ public class TestGetPersonById {
 		System.out.println("person id is: "+person.getId());
 		System.out.println("-----------------------");
 		
-		Pan pan=person.getPan();
-		System.out.println("pan id is : "+pan.getId());
-		System.out.println("pan address is : "+ pan.getAddress());
-		System.out.println("pan number is : "+pan.getPanNumber());
-		System.out.println("========================");
+		//Pan pan=person.getPan();
+		//System.out.println("pan id is : "+pan.getId());
+		//System.out.println("pan address is : "+ pan.getAddress());
+		//System.out.println("pan number is : "+pan.getPanNumber());
+		//System.out.println("========================");
 		
 		
 	}

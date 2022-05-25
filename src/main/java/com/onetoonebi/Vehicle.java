@@ -1,20 +1,23 @@
 package com.onetoonebi;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Person {
+public class Vehicle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String email;
-	@OneToOne(mappedBy = "person")
-	private Pan pan;
+	private double cost;
+	@OneToOne(cascade = CascadeType.PERSIST)//no need to save child now
+	@JoinColumn(name="charcy_id")
+	private Charcy charcy;
 
 	public int getId() {
 		return id;
@@ -32,24 +35,20 @@ public class Person {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public double getCost() {
+		return cost;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCost(double cost) {
+		this.cost = cost;
 	}
 
-	public Pan getPan() {
-		return pan;
+	public Charcy getCharcy() {
+		return charcy;
 	}
 
-	public void setPan(Pan pan) {
-		this.pan = pan;
+	public void setCharcy(Charcy charcy) {
+		this.charcy = charcy;
 	}
-
-	
-
-	
 
 }
